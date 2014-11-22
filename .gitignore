@@ -2,7 +2,6 @@
 *.slo
 *.lo
 *.o
-*.obj
 
 # Precompiled Headers
 *.gch
@@ -16,13 +15,18 @@
 # Fortran module files
 *.mod
 
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
 # Executables
 *.exe
 *.out
 *.app
+/Release
+/Debug
+/Engine/Debug
+/Engine/Release
+/SuperGame/Debug
+/SuperGame/Release
+
+*.sdf
+*.vcxproj.filters
+*.vcxproj.user
+*.opensdf

@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SuperGame", "SuperGame\SuperGame.vcxproj", "{1FF75E49-3EB0-4A3B-8B1E-9D54F45C2B63}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D200DB2E-DA98-4989-ABE8-34719032170B} = {D200DB2E-DA98-4989-ABE8-34719032170B}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Engine", "Engine\Engine.vcxproj", "{D200DB2E-DA98-4989-ABE8-34719032170B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1FF75E49-3EB0-4A3B-8B1E-9D54F45C2B63}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1FF75E49-3EB0-4A3B-8B1E-9D54F45C2B63}.Debug|Win32.Build.0 = Debug|Win32
+		{1FF75E49-3EB0-4A3B-8B1E-9D54F45C2B63}.Release|Win32.ActiveCfg = Release|Win32
+		{1FF75E49-3EB0-4A3B-8B1E-9D54F45C2B63}.Release|Win32.Build.0 = Release|Win32
+		{D200DB2E-DA98-4989-ABE8-34719032170B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D200DB2E-DA98-4989-ABE8-34719032170B}.Debug|Win32.Build.0 = Debug|Win32
+		{D200DB2E-DA98-4989-ABE8-34719032170B}.Debug|Win32.Deploy.0 = Debug|Win32
+		{D200DB2E-DA98-4989-ABE8-34719032170B}.Release|Win32.ActiveCfg = Release|Win32
+		{D200DB2E-DA98-4989-ABE8-34719032170B}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
