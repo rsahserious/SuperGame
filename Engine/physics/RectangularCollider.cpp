@@ -25,14 +25,6 @@ namespace Engine
 
 	IntersectData& RectangularCollider::Intersect(Collider* otherCollider)
 	{
-		RectangularCollider* otherRect = dynamic_cast<RectangularCollider*>(otherCollider);
-
-		glm::vec3 distances1 = otherRect->GetMinExtents() - this->GetMaxExtents();
-		glm::vec3 distances2 = this->GetMinExtents() - otherRect->GetMaxExtents();
-
-		glm::vec3 distances = glm::max(distances1, distances2);
-		float maxDistance = glm::max(distances.x, glm::max(distances.y, distances.z));
-
-		return IntersectData(maxDistance < 0);
+		return IntersectData(false);
 	}
 }

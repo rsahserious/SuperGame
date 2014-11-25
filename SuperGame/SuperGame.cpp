@@ -7,26 +7,12 @@ SuperGame::SuperGame()
 	this->physicsWorld = new Engine::PhysicsWorld();
 	this->physicsWorld->SetGravityStrength(8.0f);
 
-	Engine::MeshCollider* mcollider = new Engine::MeshCollider(*Engine::IOManager::ReadObjModel("models/terrain.obj"));
-	Engine::Object* terrain = new Engine::Object("models/terrain.obj", "textures/grass.png", mcollider);
-	//terrain->GetTransform()->SetScale(glm::vec3(1, 0, 1));
-
-	this->objects.push_back(terrain);
-	this->physicsWorld->AddObject(terrain);
-
-	for (int i = 0; i < 3; i++)
+	for (int i = 0; i < 1; i++)
 	{
-		//Engine::RectangularCollider* collider1 = new Engine::RectangularCollider(
-		//	glm::vec3(1.33f, 1.09f, 1.246f), glm::vec3(-1.31f, -1.16f, -1.264f));
-		Engine::SphericalCollider* collider = new Engine::SphericalCollider(glm::vec3(0, 0, 0), 1.0f);
-
-		Engine::DynamicObject* object = new Engine::DynamicObject("models/sphere.obj", "textures/rocks.png", collider);
+		Engine::Object* object = new Engine::Object("models/box.obj", "textures/brick_wall.png");
 		object->GetTransform()->SetPos(glm::vec3(-10.0f + (float)i / 50.0f, 45.0f + (i * 3), 0.0f + ((float)i / 50.0f)));
-		object->GetPhysicsData()->SetVelocity(glm::vec3(0.0f, 0.0f, 0.0f));
-		//object1->GetPhysicsData()->SetAngularVelocity(glm::vec3(0.3f, 0.1f, 0.0f));
 
 		this->objects.push_back(object);
-		this->physicsWorld->AddObject(object);
 	}
 
 	this->shader = new Engine::Shader("shaders/shader.vs", "shaders/shader.fs");

@@ -16,6 +16,7 @@ namespace Engine
 
 	private:
 		static void sphereWithSphere(Object* objectA, Object* objectB, IntersectData& intersectData);
+		static void sphereWithRect(Object* objectA, Object* objectB, IntersectData& intersectData);
 		static void sphereWithMesh(Object* objectA, Object* objectB, IntersectData& intersectData);
 	};
 }

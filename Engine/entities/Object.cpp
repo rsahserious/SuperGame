@@ -2,23 +2,20 @@
 
 namespace Engine
 {
+	Object::Object(VertexModel& vertexModel, Material& material)
+	{
+		this->mesh = new Mesh(vertexModel);
+		this->material = &material;
+
+		this->init();
+	}
+
 	Object::Object(const string& objPath, const string& texturePath)
 	{
 		this->mesh = new Mesh(objPath);
 		this->material = new Material(texturePath);
-		this->transform = new Transform();
-		this->physicsData = new PhysicsData();
-	}
-
-	Object::Object(const string& objPath, const string& texturePath, Collider* collider)
-		: Object(objPath, texturePath)
-	{
-		this->collider = collider;
-
-		if (this->HasCollider())
-		{
-			this->collider->SetTransform(this->transform);
-		}
+		
+		this->init();
 	}
 
 	Object::~Object()
@@ -31,6 +28,12 @@ namespace Engine
 		{
 			delete this->collider;
 		}
+	}
+
+	void Object::SetCollider(Collider* collider)
+	{
+		this->collider = collider;
+		this->collider->SetTransform(this->transform);
 	}
 
 	bool Object::HasCollider()
@@ -47,5 +50,11 @@ namespace Engine
 	{
 		this->material->GetTexture()->Bind();
 		this->mesh->Draw();
+	}
+
+	void Object::init()
+	{
+		this->transform = new Transform();
+		this->physicsData = new PhysicsData();
 	}
 }

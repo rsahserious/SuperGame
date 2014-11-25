@@ -15,8 +15,6 @@ namespace Engine
 	{
 	public:
 		DynamicObject(const string& objPath, const string& texturePath);
-		DynamicObject(const string& objPath, const string& texturePath,
-			Collider* collider);
 		~DynamicObject();
 
 		void Update() override;

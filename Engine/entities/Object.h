@@ -15,8 +15,8 @@ namespace Engine
 	class Object : public Entity
 	{
 	public:
+		Object(VertexModel& vertexModel, Material& material);
 		Object(const string& objPath, const string& texturePath);
-		Object(const string& objPath, const string& texturePath, Collider* collider);
 		~Object();
 
 		inline Mesh* GetMesh() { return this->mesh; }
@@ -24,6 +24,8 @@ namespace Engine
 		inline Transform* GetTransform() { return this->transform; }
 		inline Collider* GetCollider() { return this->collider; }
 		inline PhysicsData* GetPhysicsData() { return this->physicsData; }
+
+		void SetCollider(Collider* collider);
 
 		bool HasCollider();
 
@@ -38,5 +40,6 @@ namespace Engine
 		PhysicsData* physicsData;
 
 	private:
+		virtual void init();
 	};
 }

@@ -8,13 +8,6 @@ namespace Engine
 
 	}
 
-	DynamicObject::DynamicObject(const string& objPath, const string& texturePath,
-		Collider* collider)
-		: Object(objPath, texturePath, collider)
-	{
-
-	}
-
 	DynamicObject::~DynamicObject()
 	{
 
@@ -46,13 +39,13 @@ namespace Engine
 		}
 
 		// temporary
-		float surfaceHeight = 1.0f;
+		/*float surfaceHeight = 1.0f;
 		float height = this->transform->GetPos()->y - surfaceHeight;
 
 		if (height < 0.0f)
 		{
 			this->transform->GetPos()->y -= height;
 			this->physicsData->GetVelocity()->y *= -this->physicsData->GetElasticity();
-		}
+		}*/
 	}
 }

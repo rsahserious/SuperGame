@@ -3,6 +3,7 @@
 #include "Collider.h"
 #include "IntersectData.h"
 #include "MeshCollider.h"
+#include "RectangularCollider.h"
 #include "..\core\Utils.h"
 
 namespace Engine

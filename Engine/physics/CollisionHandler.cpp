@@ -11,6 +11,10 @@ namespace Engine
 		{
 			sphereWithSphere(objectA, objectB, intersectData);
 		}
+		else if (COLLIDER_TYPE_CMP(SphericalCollider, RectangularCollider))
+		{
+			sphereWithRect(objectA, objectB, intersectData);
+		}
 		else if (COLLIDER_TYPE_CMP(SphericalCollider, MeshCollider))
 		{
 			sphereWithMesh(objectA, objectB, intersectData);
@@ -35,6 +39,15 @@ namespace Engine
 
 		objectA->GetPhysicsData()->SetVelocity(nv1);
 		objectB->GetPhysicsData()->SetVelocity(nv2);
+	}
+
+	void CollisionHandler::sphereWithRect(Object* objectA, Object* objectB, IntersectData& intersectData)
+	{
+		glm::vec3 v1 = *objectA->GetPhysicsData()->GetVelocity();
+		glm::vec3 v2 = *objectB->GetPhysicsData()->GetVelocity();
+
+		objectA->GetPhysicsData()->SetVelocity(-v1);
+		objectB->GetPhysicsData()->SetVelocity(-v2);
 	}
 
 	void CollisionHandler::sphereWithMesh(Object* objectA, Object* objectB, IntersectData& intersectData)
