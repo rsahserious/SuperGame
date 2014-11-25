@@ -2,27 +2,17 @@
 
 namespace Engine
 {
-	Object::Object(VertexModel& vertexModel, Material& material)
+	Object::Object(Mesh* mesh, Material* material)
 	{
-		this->mesh = new Mesh(vertexModel);
-		this->material = &material;
+		this->mesh = mesh;
+		this->material = material;
 
-		this->init();
-	}
-
-	Object::Object(const string& objPath, const string& texturePath)
-	{
-		this->mesh = new Mesh(objPath);
-		this->material = new Material(texturePath);
-		
 		this->init();
 	}
 
 	Object::~Object()
 	{
 		delete this->transform;
-		delete this->material;
-		delete this->mesh;
 
 		if (this->HasCollider())
 		{

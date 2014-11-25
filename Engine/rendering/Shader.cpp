@@ -62,7 +62,6 @@ namespace Engine
 
 		glUniformMatrix4fv(this->uniform[Uniforms::cameraTransform], 1, GL_FALSE, &cameraTransformModel[0][0]);
 		glUniformMatrix4fv(this->uniform[Uniforms::objectTransform], 1, GL_FALSE, &transformModel[0][0]);
-
 	}
 
 	bool Shader::getProgramError(unsigned int flag, unsigned int bufferLength, GLchar* errorBuffer)

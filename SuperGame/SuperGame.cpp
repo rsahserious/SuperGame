@@ -7,12 +7,18 @@ SuperGame::SuperGame()
 	this->physicsWorld = new Engine::PhysicsWorld();
 	this->physicsWorld->SetGravityStrength(8.0f);
 
-	for (int i = 0; i < 1; i++)
-	{
-		Engine::Object* object = new Engine::Object("models/box.obj", "textures/brick_wall.png");
-		object->GetTransform()->SetPos(glm::vec3(-10.0f + (float)i / 50.0f, 45.0f + (i * 3), 0.0f + ((float)i / 50.0f)));
+	this->boxMesh = new Engine::Mesh("models/box.obj");
+	this->bricksMaterial = new Engine::Material("textures/brick_wall.png");
 
-		this->objects.push_back(object);
+	for (int x = 0; x < 100; x++)
+	{
+		for (int y = 0; y < 100; y++)
+		{
+			Engine::Object* object = new Engine::Object(this->boxMesh, this->bricksMaterial);
+			object->GetTransform()->SetPos(glm::vec3(0.0f + (x * 3.0f), 20.0f, 0.0f + (y * 3.0f)));
+
+			this->objects.push_back(object);
+		}
 	}
 
 	this->shader = new Engine::Shader("shaders/shader.vs", "shaders/shader.fs");
@@ -31,6 +37,9 @@ SuperGame::~SuperGame()
 		delete this->objects.back();
 		this->objects.pop_back();
 	}
+
+	delete this->bricksMaterial;
+	delete this->boxMesh;
 }
 
 void SuperGame::Run()

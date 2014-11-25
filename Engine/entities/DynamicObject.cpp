@@ -2,8 +2,8 @@
 
 namespace Engine
 {
-	DynamicObject::DynamicObject(const string& objPath, const string& texturePath)
-		: Object(objPath, texturePath)
+	DynamicObject::DynamicObject(Mesh* mesh, Material* material)
+		: Object(mesh, material)
 	{
 
 	}

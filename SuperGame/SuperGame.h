@@ -7,6 +7,7 @@
 #include <Engine\rendering\Shader.h>
 #include <Engine\rendering\Texture.h>
 #include <Engine\rendering\Camera.h>
+#include <Engine\rendering\Material.h>
 #include <Engine\entities\Object.h>
 #include <Engine\entities\DynamicObject.h>
 #include <Engine\physics\PhysicsWorld.h>
@@ -58,4 +59,7 @@ private:
 	float currentFPS;
 
 	float angle = 0.0;
+
+	Engine::Mesh* boxMesh;
+	Engine::Material* bricksMaterial;
 };

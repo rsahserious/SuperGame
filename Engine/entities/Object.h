@@ -15,8 +15,7 @@ namespace Engine
 	class Object : public Entity
 	{
 	public:
-		Object(VertexModel& vertexModel, Material& material);
-		Object(const string& objPath, const string& texturePath);
+		Object(Mesh* mesh, Material* material);
 		~Object();
 
 		inline Mesh* GetMesh() { return this->mesh; }

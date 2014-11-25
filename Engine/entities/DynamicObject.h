@@ -14,7 +14,7 @@ namespace Engine
 	class DynamicObject : public Object
 	{
 	public:
-		DynamicObject(const string& objPath, const string& texturePath);
+		DynamicObject(Mesh* mesh, Material* material);
 		~DynamicObject();
 
 		void Update() override;
