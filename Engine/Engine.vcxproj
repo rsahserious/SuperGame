@@ -11,6 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="core\VertexArray.h" />
     <ClInclude Include="physics\CollisionHandler.h" />
     <ClInclude Include="physics\MeshCollider.h" />
     <ClInclude Include="rendering\Camera.h" />

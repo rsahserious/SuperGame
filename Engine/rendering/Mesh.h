@@ -5,25 +5,13 @@
 #include <vector>
 #include "..\core\VertexModel.h"
 #include "..\core\IOManager.h"
+#include "..\core\VertexArray.h"
 
 using std::string;
 using std::vector;
 
 namespace Engine
 {
-	namespace VertexArray
-	{
-		enum VertexArray
-		{
-			positions,
-			texturePositions,
-			normals,
-			indices,
-
-			_length
-		};
-	}
-
 	class Mesh
 	{
 	public:

@@ -5,22 +5,25 @@ SuperGame::SuperGame()
 	this->window = new Engine::Window("Super Game", Constants::SCREEN_WIDTH, Constants::SCREEN_HEIGHT);
 
 	this->physicsWorld = new Engine::PhysicsWorld();
-	this->physicsWorld->SetGravityStrength(8.0f);
+	this->physicsWorld->SetGravityStrength(35.0f);
 
-	this->boxMesh = new Engine::Mesh("models/box.obj");
-	this->bricksMaterial = new Engine::Material("textures/brick_wall.png");
+	this->boxMesh = new Engine::Mesh("models/sphere.obj");
+	this->bricksMaterial = new Engine::Material("textures/rocks.png");
 
-	for (int x = 0; x < 100; x++)
+	for (int x = 0; x < 10; x++)
 	{
-		for (int y = 0; y < 100; y++)
+		for (int y = 0; y < 10; y++)
 		{
-			Engine::Object* object = new Engine::Object(this->boxMesh, this->bricksMaterial);
-			object->GetTransform()->SetPos(glm::vec3(0.0f + (x * 3.0f), 20.0f, 0.0f + (y * 3.0f)));
+			Engine::SphericalCollider* collider = new Engine::SphericalCollider(glm::vec3(0, 0, 0), 1.0f);
+			Engine::DynamicObject* object = new Engine::DynamicObject(this->boxMesh, this->bricksMaterial);
+			object->SetCollider(collider);
+			object->GetTransform()->SetPos(glm::vec3(0.0f + (rand() % 100 / 1000.0f), 20.0f + (y * 3.0f), 0.0f + (x * 3.0f) + (rand() % 100 / 1000.0f)));
 
 			this->objects.push_back(object);
+			this->physicsWorld->AddObject(object);
 		}
 	}
-
+	
 	this->shader = new Engine::Shader("shaders/shader.vs", "shaders/shader.fs");
 
 	this->gameState = GameState::INIT;
