@@ -7,7 +7,7 @@ SuperGame::SuperGame()
 	this->physicsWorld = new Engine::PhysicsWorld();
 	this->physicsWorld->SetGravityStrength(35.0f);
 
-	this->boxMesh = new Engine::Mesh("models/sphere.obj");
+	this->boxMesh = new Engine::DynamicMesh("models/sphere.obj");
 	this->bricksMaterial = new Engine::Material("textures/rocks.png");
 
 	for (int x = 0; x < 10; x++)

@@ -18,13 +18,14 @@ namespace Engine
 		Mesh();
 		Mesh(VertexModel& model);
 		Mesh(const string& filePath);
-		~Mesh();
+		virtual ~Mesh();
 
 		void Draw();
 
-	private:
+	protected:
 		void init(VertexModel& model);
 
+	private:
 		unsigned int numVertices;
 		GLuint vertexArrayObject;
 		GLuint vertexArrayBuffers[VertexArray::_length];

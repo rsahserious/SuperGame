@@ -20,6 +20,7 @@
     <ClInclude Include="entities\DynamicObject.h" />
     <ClInclude Include="entities\Entity.h" />
     <ClInclude Include="core\IOManager.h" />
+    <ClInclude Include="rendering\DynamicMesh.h" />
     <ClInclude Include="rendering\Material.h" />
     <ClInclude Include="rendering\Mesh.h" />
     <ClInclude Include="entities\Object.h" />
@@ -43,6 +44,7 @@
     <ClCompile Include="entities\DynamicObject.cpp" />
     <ClCompile Include="entities\Entity.cpp" />
     <ClCompile Include="core\IOManager.cpp" />
+    <ClCompile Include="rendering\DynamicMesh.cpp" />
     <ClCompile Include="rendering\Material.cpp" />
     <ClCompile Include="rendering\Mesh.cpp" />
     <ClCompile Include="entities\Object.cpp" />

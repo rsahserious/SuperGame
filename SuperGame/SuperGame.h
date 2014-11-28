@@ -3,7 +3,7 @@
 #include <Engine\core\Window.h>
 #include <Engine\core\VertexModel.h>
 #include <Engine\core\Utils.h>
-#include <Engine\rendering\Mesh.h>
+#include <Engine\rendering\DynamicMesh.h>
 #include <Engine\rendering\Shader.h>
 #include <Engine\rendering\Texture.h>
 #include <Engine\rendering\Camera.h>
@@ -60,6 +60,6 @@ private:
 
 	float angle = 0.0;
 
-	Engine::Mesh* boxMesh;
+	Engine::DynamicMesh* boxMesh;
 	Engine::Material* bricksMaterial;
 };
