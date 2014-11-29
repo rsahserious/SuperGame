@@ -9,7 +9,7 @@ PlayerCamera::PlayerCamera() :
 {
 	const glm::vec3 upVector(0.0f, 1.0f, 0.0f);
 
-	this->camera = new Engine::Camera(
+	this->camera = Engine::Camera(
 		this->position,
 		this->angle,
 		this->tilt,
@@ -23,12 +23,12 @@ PlayerCamera::PlayerCamera() :
 
 PlayerCamera::~PlayerCamera()
 {
-	delete this->camera;
+
 }
 
 void PlayerCamera::UpdatePosition()
 {
-	this->camera->SetPosition(this->position);
+	this->camera.SetPosition(this->position);
 	//std::cout << "Camera | x: " << this->position.x << " y: " << this->position.y << " z: " << this->position.z << std::endl;
 }
 
@@ -47,5 +47,5 @@ void PlayerCamera::UpdateEyeDirection(const float xOffset, const float yOffset)
 	if (this->tilt > 1.0f)			this->tilt = 1.0f;
 	else if (this->tilt < -1.0f)	this->tilt = -1.0f;
 
-	this->camera->SetEyeDirection(this->angle, this->tilt);
+	this->camera.SetEyeDirection(this->angle, this->tilt);
 }

@@ -12,7 +12,7 @@ namespace Engine
 	class Camera
 	{
 	public:
-		Camera();
+		Camera() { }
 		Camera(const glm::vec3& position, float angle, float tilt, const glm::vec3& upVector, 
 			float aspectRatio, float FOV, float zNear, float zFar);
 		~Camera();

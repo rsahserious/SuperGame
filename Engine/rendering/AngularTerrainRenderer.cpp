@@ -2,7 +2,7 @@
 
 namespace Engine
 {
-	AngularTerrainRenderer::AngularTerrainRenderer(glm::vec3 initialPosition, float grain, float minDistance)
+	AngularTerrainRenderer::AngularTerrainRenderer(const glm::vec3& initialPosition, float grain, float minDistance)
 		: TerrainRenderer(initialPosition, grain)
 	{
 		this->minDistance = minDistance;
@@ -15,7 +15,7 @@ namespace Engine
 
 	}
 
-	void AngularTerrainRenderer::Update(glm::vec3 position)
+	void AngularTerrainRenderer::Update(const glm::vec3& position)
 	{
 		this->position = position;
 
@@ -46,7 +46,7 @@ namespace Engine
 		}
 	}
 
-	void AngularTerrainRenderer::addPoint(glm::vec2 point)
+	void AngularTerrainRenderer::addPoint(const glm::vec2& point)
 	{
 		// tmp
 		static float height = 0.0f;
@@ -75,7 +75,7 @@ namespace Engine
 		this->points.push_back(point);
 	}
 
-	bool AngularTerrainRenderer::pointExists(glm::vec2 point)
+	bool AngularTerrainRenderer::pointExists(const glm::vec2& point)
 	{
 		if (std::find(this->points.begin(), this->points.end(), point) != this->points.end())
 		{

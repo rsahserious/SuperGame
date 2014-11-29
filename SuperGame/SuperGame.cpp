@@ -7,7 +7,7 @@ SuperGame::SuperGame()
 	this->physicsWorld = new Engine::PhysicsWorld();
 	this->physicsWorld->SetGravityStrength(35.0f);
 
-	this->terrainRenderer = new Engine::AngularTerrainRenderer(*this->playerCamera->GetPosition(), 20.0f, 200.0f);
+	this->terrainRenderer = new Engine::AngularTerrainRenderer(this->playerCamera->GetPosition(), 20.0f, 200.0f);
 
 	// terrain
 	//Engine::Mesh* terrainMesh = new Engine::Mesh("models/terrain.obj");
@@ -82,7 +82,7 @@ void SuperGame::loop()
 			ticks_snapshot = ticks;
 
 			// tmp
-			this->terrainRenderer->Update(*this->playerCamera->GetPosition());
+			this->terrainRenderer->Update(this->playerCamera->GetPosition());
 		}
 		
 		// Calculate this frame's time

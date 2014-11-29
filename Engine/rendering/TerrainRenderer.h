@@ -9,10 +9,10 @@ namespace Engine
 	class TerrainRenderer
 	{
 	public:
-		TerrainRenderer(glm::vec3 initialPosition, float grain);
+		TerrainRenderer(const glm::vec3& initialPosition, float grain);
 		virtual ~TerrainRenderer();
 
-		virtual void Update(glm::vec3 position) = 0;
+		virtual void Update(const glm::vec3& position) = 0;
 
 		inline VertexModel& GetVertexModel() { return this->vertexModel; }
 		inline DynamicMesh& GetMesh() { return this->mesh; }

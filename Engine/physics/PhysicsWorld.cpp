@@ -41,14 +41,14 @@ namespace Engine
 				// gravity
 				float gDelta = 0.00003f;
 				glm::vec3 gFactor = gDelta * this->gravityStrength * dynamicObject->GetPhysicsData()->GetMass() * this->gravityVector;
-				*dynamicObject->GetPhysicsData()->GetVelocity() += gFactor;
+				dynamicObject->GetPhysicsData()->GetVelocity() += gFactor;
 
 				// air resistance
 				float rDelta = 0.003;
 				float rFactor = 1.0f - (this->airDensity * rDelta);
 				if (rDelta > 0.0f)
 				{
-					*dynamicObject->GetPhysicsData()->GetVelocity() *= rFactor;
+					dynamicObject->GetPhysicsData()->GetVelocity() *= rFactor;
 				}
 			}
 

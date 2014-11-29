@@ -12,7 +12,7 @@ namespace Engine
 		MeshCollider(VertexModel& vertexModel);
 		~MeshCollider();
 
-		IntersectData& Intersect(Collider* otherCollider);
+		IntersectData Intersect(Collider* otherCollider);
 
 		inline vector<glm::vec3>& GetVertices() { return this->vertices; }
 

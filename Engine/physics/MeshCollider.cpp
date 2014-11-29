@@ -13,7 +13,7 @@ namespace Engine
 
 	}
 
-	IntersectData& MeshCollider::Intersect(Collider* otherCollider)
+	IntersectData MeshCollider::Intersect(Collider* otherCollider)
 	{
 		SphericalCollider* otherSphere = dynamic_cast<SphericalCollider*>(otherCollider);
 

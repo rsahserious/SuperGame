@@ -22,7 +22,7 @@ namespace Engine
 		}
 
 		inline unsigned int GetVerticesCount() { return this->vertices.size(); }
-		void Add(glm::vec3& vertex, glm::vec2 uv, glm::vec3 normal)
+		void Add(const glm::vec3& vertex, const glm::vec2 uv, const glm::vec3 normal)
 		{
 			this->vertices.push_back(vertex);
 			this->UVs.push_back(uv);

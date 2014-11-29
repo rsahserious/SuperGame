@@ -14,7 +14,7 @@ namespace Engine
 		glm::vec3 GetMaxExtents() const;
 		glm::vec3 GetMinExtents() const;
 			
-		IntersectData& Intersect(Collider* otherCollider);
+		IntersectData Intersect(Collider* otherCollider);
 
 	private:			
 		glm::vec3 maxExtents;

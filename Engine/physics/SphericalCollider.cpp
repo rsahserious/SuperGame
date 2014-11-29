@@ -15,7 +15,7 @@ namespace Engine
 
 	glm::vec3 SphericalCollider::GetCenter() const
 	{
-		return this->center + *this->transform->GetPos();
+		return this->center + this->transform->GetPos();
 	}
 
 	float SphericalCollider::GetRadius() const
@@ -23,7 +23,7 @@ namespace Engine
 		return radius;
 	}
 
-	IntersectData& SphericalCollider::Intersect(Collider* otherCollider)
+	IntersectData SphericalCollider::Intersect(Collider* otherCollider)
 	{
 		SphericalCollider* otherSphere = dynamic_cast<SphericalCollider*>(otherCollider);
 		RectangularCollider* otherRect = dynamic_cast<RectangularCollider*>(otherCollider);

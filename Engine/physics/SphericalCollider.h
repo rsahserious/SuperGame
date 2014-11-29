@@ -17,7 +17,7 @@ namespace Engine
 		glm::vec3 GetCenter() const;
 		float GetRadius() const;
 
-		IntersectData& Intersect(Collider* otherCollider);
+		IntersectData Intersect(Collider* otherCollider);
 
 	private:
 		glm::vec3 center;

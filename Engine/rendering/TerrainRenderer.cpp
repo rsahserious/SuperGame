@@ -2,7 +2,7 @@
 
 namespace Engine
 {
-	TerrainRenderer::TerrainRenderer(glm::vec3 initialPosition, float grain)
+	TerrainRenderer::TerrainRenderer(const glm::vec3& initialPosition, float grain)
 	{
 		this->position = initialPosition;
 		this->grain = grain;
@@ -13,7 +13,7 @@ namespace Engine
 
 	}
 
-	void TerrainRenderer::Update(glm::vec3 position)
+	void TerrainRenderer::Update(const glm::vec3& position)
 	{
 		this->mesh.Update(this->vertexModel);
 	}

@@ -15,7 +15,7 @@ namespace Engine
 		inline Transform* GetTransform() { return this->transform; }
 		inline void SetTransform(Transform* transform) { this->transform = transform; }
 
-		virtual IntersectData& Intersect(Collider* otherCollider) = 0;
+		virtual IntersectData Intersect(Collider* otherCollider) = 0;
 
 	protected:
 		Transform* transform;

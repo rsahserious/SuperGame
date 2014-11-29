@@ -15,8 +15,8 @@ namespace Engine
 
 	void DynamicObject::Update()
 	{
-		*this->transform->GetPos() += *this->physicsData->GetVelocity();
-		*this->transform->GetRot() += *this->physicsData->GetAngularVelocity();
+		this->transform->GetPos() += this->physicsData->GetVelocity();
+		this->transform->GetRot() += this->physicsData->GetAngularVelocity();
 
 		Object::Update();
 	}
@@ -40,12 +40,12 @@ namespace Engine
 
 		// temporary surface
 		float surfaceHeight = 1.0f;
-		float height = this->transform->GetPos()->y - surfaceHeight;
+		float height = this->transform->GetPos().y - surfaceHeight;
 
 		if (height < 0.0f)
 		{
-			this->transform->GetPos()->y -= height;
-			this->physicsData->GetVelocity()->y *= -this->physicsData->GetElasticity();
+			this->transform->GetPos().y -= height;
+			this->physicsData->GetVelocity().y *= -this->physicsData->GetElasticity();
 		}
 	}
 }
