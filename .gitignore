@@ -26,8 +26,12 @@
 /Engine/Release
 /SuperGame/Debug
 /SuperGame/Release
+/SuperGameTests/Debug
+/SuperGameTests/Release
+ipch
 
 *.sdf
 *.vcxproj.filters
 *.vcxproj.user
 *.opensdf
+*.ipch

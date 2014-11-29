@@ -10,6 +10,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SuperGame", "SuperGame\Supe
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Engine", "Engine\Engine.vcxproj", "{D200DB2E-DA98-4989-ABE8-34719032170B}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SuperGameTests", "SuperGameTests\SuperGameTests.vcxproj", "{6DFA43F4-FC3D-4E6E-AEDF-F98FA3D122F8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -25,6 +27,10 @@ Global
 		{D200DB2E-DA98-4989-ABE8-34719032170B}.Debug|Win32.Deploy.0 = Debug|Win32
 		{D200DB2E-DA98-4989-ABE8-34719032170B}.Release|Win32.ActiveCfg = Release|Win32
 		{D200DB2E-DA98-4989-ABE8-34719032170B}.Release|Win32.Build.0 = Release|Win32
+		{6DFA43F4-FC3D-4E6E-AEDF-F98FA3D122F8}.Debug|Win32.ActiveCfg = Debug|Win32
+		{6DFA43F4-FC3D-4E6E-AEDF-F98FA3D122F8}.Debug|Win32.Build.0 = Debug|Win32
+		{6DFA43F4-FC3D-4E6E-AEDF-F98FA3D122F8}.Release|Win32.ActiveCfg = Release|Win32
+		{6DFA43F4-FC3D-4E6E-AEDF-F98FA3D122F8}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
