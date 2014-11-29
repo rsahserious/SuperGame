@@ -8,6 +8,7 @@
 #include <Engine\rendering\Texture.h>
 #include <Engine\rendering\Camera.h>
 #include <Engine\rendering\Material.h>
+#include <Engine\rendering\AngularTerrainRenderer.h>
 #include <Engine\entities\Object.h>
 #include <Engine\entities\DynamicObject.h>
 #include <Engine\physics\PhysicsWorld.h>
@@ -62,4 +63,6 @@ private:
 
 	Engine::DynamicMesh* boxMesh;
 	Engine::Material* bricksMaterial;
+
+	Engine::AngularTerrainRenderer* terrainRenderer;
 };

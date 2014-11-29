@@ -11,7 +11,7 @@ namespace Engine
 	class VertexModel
 	{
 	public:
-		VertexModel();
+		VertexModel() { }
 		VertexModel(const vector<glm::vec3>& vertices,
 			const vector<glm::vec2>& UVs,
 			const vector<glm::vec3>& normals)
@@ -22,6 +22,12 @@ namespace Engine
 		}
 
 		inline unsigned int GetVerticesCount() { return this->vertices.size(); }
+		void Add(glm::vec3& vertex, glm::vec2 uv, glm::vec3 normal)
+		{
+			this->vertices.push_back(vertex);
+			this->UVs.push_back(uv);
+			this->normals.push_back(normal);
+		}
 
 		inline vector<glm::vec3>& GetVertices() { return this->vertices; }
 		inline vector<glm::vec2>& GetUVs() { return this->UVs; }

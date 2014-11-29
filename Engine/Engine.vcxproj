@@ -14,12 +14,14 @@
     <ClInclude Include="core\VertexArray.h" />
     <ClInclude Include="physics\CollisionHandler.h" />
     <ClInclude Include="physics\MeshCollider.h" />
+    <ClInclude Include="rendering\AngularTerrainRenderer.h" />
     <ClInclude Include="rendering\Camera.h" />
     <ClInclude Include="physics\PhysicsWorld.h" />
     <ClInclude Include="physics\Collider.h" />
     <ClInclude Include="entities\DynamicObject.h" />
     <ClInclude Include="entities\Entity.h" />
     <ClInclude Include="core\IOManager.h" />
+    <ClInclude Include="rendering\CircularTerrainRenderer.h" />
     <ClInclude Include="rendering\DynamicMesh.h" />
     <ClInclude Include="rendering\Material.h" />
     <ClInclude Include="rendering\Mesh.h" />
@@ -29,6 +31,7 @@
     <ClInclude Include="physics\RectangularCollider.h" />
     <ClInclude Include="rendering\Shader.h" />
     <ClInclude Include="physics\SphericalCollider.h" />
+    <ClInclude Include="rendering\TerrainRenderer.h" />
     <ClInclude Include="rendering\Texture.h" />
     <ClInclude Include="core\Transform.h" />
     <ClInclude Include="core\Utils.h" />
@@ -38,12 +41,14 @@
   <ItemGroup>
     <ClCompile Include="physics\CollisionHandler.cpp" />
     <ClCompile Include="physics\MeshCollider.cpp" />
+    <ClCompile Include="rendering\AngularTerrainRenderer.cpp" />
     <ClCompile Include="rendering\Camera.cpp" />
     <ClCompile Include="physics\PhysicsWorld.cpp" />
     <ClCompile Include="physics\Collider.cpp" />
     <ClCompile Include="entities\DynamicObject.cpp" />
     <ClCompile Include="entities\Entity.cpp" />
     <ClCompile Include="core\IOManager.cpp" />
+    <ClCompile Include="rendering\CircularTerrainRenderer.cpp" />
     <ClCompile Include="rendering\DynamicMesh.cpp" />
     <ClCompile Include="rendering\Material.cpp" />
     <ClCompile Include="rendering\Mesh.cpp" />
@@ -51,6 +56,7 @@
     <ClCompile Include="physics\RectangularCollider.cpp" />
     <ClCompile Include="rendering\Shader.cpp" />
     <ClCompile Include="physics\SphericalCollider.cpp" />
+    <ClCompile Include="rendering\TerrainRenderer.cpp" />
     <ClCompile Include="rendering\Texture.cpp" />
     <ClCompile Include="core\Transform.cpp" />
     <ClCompile Include="core\Window.cpp" />

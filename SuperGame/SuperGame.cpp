@@ -7,6 +7,15 @@ SuperGame::SuperGame()
 	this->physicsWorld = new Engine::PhysicsWorld();
 	this->physicsWorld->SetGravityStrength(35.0f);
 
+	this->terrainRenderer = new Engine::AngularTerrainRenderer(*this->playerCamera->GetPosition(), 20.0f, 200.0f);
+
+	// terrain
+	//Engine::Mesh* terrainMesh = new Engine::Mesh("models/terrain.obj");
+	Engine::Material* terrainMaterial = new Engine::Material("textures/gravel.png");
+	Engine::Object* terrain = new Engine::Object(&this->terrainRenderer->GetMesh(), terrainMaterial);
+	this->objects.push_back(terrain);
+
+	// balls
 	this->boxMesh = new Engine::DynamicMesh("models/sphere.obj");
 	this->bricksMaterial = new Engine::Material("textures/rocks.png");
 
@@ -43,6 +52,8 @@ SuperGame::~SuperGame()
 
 	delete this->bricksMaterial;
 	delete this->boxMesh;
+
+	delete this->terrainRenderer;
 }
 
 void SuperGame::Run()
@@ -69,6 +80,9 @@ void SuperGame::loop()
 		{
 			std::cout << "FPS: " << (int)this->currentFPS << std::endl;
 			ticks_snapshot = ticks;
+
+			// tmp
+			this->terrainRenderer->Update(*this->playerCamera->GetPosition());
 		}
 		
 		// Calculate this frame's time

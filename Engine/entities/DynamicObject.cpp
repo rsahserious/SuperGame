@@ -38,7 +38,7 @@ namespace Engine
 			}
 		}
 
-		// temporary
+		// temporary surface
 		float surfaceHeight = 1.0f;
 		float height = this->transform->GetPos()->y - surfaceHeight;
 

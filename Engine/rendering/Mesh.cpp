@@ -2,6 +2,11 @@
 
 namespace Engine
 {
+	Mesh::Mesh()
+	{
+
+	}
+
 	Mesh::Mesh(VertexModel& model)
 	{
 		this->init(model);
