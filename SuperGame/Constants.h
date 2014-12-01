@@ -14,6 +14,6 @@ namespace Constants
 	static const float				MAX_DRAW_DISTANCE		= 200000.0f;
 
 	static const float				MOUSE_SENSITIVITY		= 0.07f;
-	static const float				CAMERA_SPEED			= 0.12f;
-	static const float				CAMERA_SPRINT_BOOST		= 4.0f;
+	static const float				CAMERA_SPEED			= 0.3f;
+	static const float				CAMERA_SPRINT_BOOST		= 3.0f;
 }

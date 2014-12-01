@@ -13,7 +13,7 @@ float Misc::GetCameraSpeedFactor()
 		factor *= HALF_SPEED_FACTOR;
 	}
 
-	if (input->IsKeyDown(SDLK_CAPSLOCK))
+	if (input->IsKeyDown(SDLK_CAPSLOCK) || input->IsKeyDown(SDLK_LSHIFT))
 	{
 		factor *= Constants::CAMERA_SPRINT_BOOST;
 	}

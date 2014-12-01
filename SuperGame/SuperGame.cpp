@@ -5,13 +5,13 @@ SuperGame::SuperGame()
 	this->window = new Engine::Window("Super Game", Constants::SCREEN_WIDTH, Constants::SCREEN_HEIGHT);
 
 	this->physicsWorld = new Engine::PhysicsWorld();
-	this->physicsWorld->SetGravityStrength(35.0f);
+	this->physicsWorld->SetGravityStrength(12.0f);
 
 	this->terrainRenderer = new Engine::AngularTerrainRenderer(this->playerCamera->GetPosition(), 20.0f, 200.0f);
 
 	// terrain
 	//Engine::Mesh* terrainMesh = new Engine::Mesh("models/terrain.obj");
-	Engine::Material* terrainMaterial = new Engine::Material("textures/gravel.png");
+	Engine::Material* terrainMaterial = new Engine::Material("textures/grass.png");
 	Engine::Object* terrain = new Engine::Object(&this->terrainRenderer->GetMesh(), terrainMaterial);
 	this->objects.push_back(terrain);
 
@@ -19,14 +19,14 @@ SuperGame::SuperGame()
 	this->boxMesh = new Engine::DynamicMesh("models/sphere.obj");
 	this->bricksMaterial = new Engine::Material("textures/rocks.png");
 
-	for (int x = 0; x < 10; x++)
+	for (float x = 0; x < 10; x += 1)
 	{
-		for (int y = 0; y < 10; y++)
+		for (float y = 0; y < 10; y += 1)
 		{
 			Engine::SphericalCollider* collider = new Engine::SphericalCollider(glm::vec3(0, 0, 0), 1.0f);
 			Engine::DynamicObject* object = new Engine::DynamicObject(this->boxMesh, this->bricksMaterial);
 			object->SetCollider(collider);
-			object->GetTransform()->SetPos(glm::vec3(0.0f + (rand() % 100 / 1000.0f), 20.0f + (y * 3.0f), 0.0f + (x * 3.0f) + (rand() % 100 / 1000.0f)));
+			object->GetTransform()->SetPos(glm::vec3(0.0f + (rand() % 100 / 100.0f), 20.0f + (y * 3.0f), 0.0f + (x * 3.0f) + (rand() % 100 / 100.0f)));
 
 			this->objects.push_back(object);
 			this->physicsWorld->AddObject(object);
