@@ -26,13 +26,13 @@ public:
 		return instance;
 	}
 
-	void ExecuteAction(const t_Action action);
+	void ExecuteAction(const t_Action action, float deltaTime);
 
 private:
 	Player();
 
-	void moveForward();
-	void moveBackward();
-	void moveLeft();
-	void moveRight();
+	void moveForward(float deltaTime);
+	void moveBackward(float deltaTime);
+	void moveLeft(float deltaTime);
+	void moveRight(float deltaTime);
 };

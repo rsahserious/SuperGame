@@ -17,7 +17,7 @@ namespace Engine
 		DynamicObject(Mesh* mesh, Material* material);
 		~DynamicObject();
 
-		void Update() override;
+		void Update(float deltaTime) override;
 		void HandleCollisions(const std::vector<Object*>& otherObjects);
 
 	private:

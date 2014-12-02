@@ -31,7 +31,7 @@ namespace Engine
 		return this->collider != nullptr;
 	}
 
-	void Object::Update()
+	void Object::Update(float deltaTime)
 	{
 		
 	}

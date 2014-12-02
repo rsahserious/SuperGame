@@ -7,7 +7,7 @@ SuperGame::SuperGame()
 	this->physicsWorld = new Engine::PhysicsWorld();
 	this->physicsWorld->SetGravityStrength(12.0f);
 
-	this->terrainRenderer = new Engine::AngularTerrainRenderer(this->playerCamera->GetPosition(), 20.0f, 200.0f);
+	this->terrainRenderer = new Engine::AngularTerrainRenderer(this->playerCamera->GetPosition(), 10.0f, 500.0f);
 
 	// terrain
 	//Engine::Mesh* terrainMesh = new Engine::Mesh("models/terrain.obj");
@@ -19,9 +19,9 @@ SuperGame::SuperGame()
 	this->boxMesh = new Engine::DynamicMesh("models/sphere.obj");
 	this->bricksMaterial = new Engine::Material("textures/rocks.png");
 
-	for (float x = 0; x < 10; x += 1)
+	for (float x = 0; x < 15; x += 1)
 	{
-		for (float y = 0; y < 10; y += 1)
+		for (float y = 0; y < 15; y += 1)
 		{
 			Engine::SphericalCollider* collider = new Engine::SphericalCollider(glm::vec3(0, 0, 0), 1.0f);
 			Engine::DynamicObject* object = new Engine::DynamicObject(this->boxMesh, this->bricksMaterial);
@@ -66,10 +66,11 @@ void SuperGame::loop()
 {
 	while (this->gameState != GameState::EXIT)
 	{
+		static float deltaTime = 1.0f;
 		const int ticks = SDL_GetTicks();
 
 		this->processInput();
-		this->processLogic();
+		this->processLogic(deltaTime);
 		this->drawScene();
 
 		this->currentFPS = Engine::Utils::GetFPS();
@@ -94,6 +95,10 @@ void SuperGame::loop()
 		{
 			SDL_Delay(fpsTime - frameTime);
 		}
+
+		// calculate delta time
+		deltaTime = Constants::DESIRED_FPS / (1000.0f / frameTime);
+		deltaTime = fmin(deltaTime, 10.0f);
 	}
 }
 
@@ -145,31 +150,31 @@ void SuperGame::processInput()
 	}
 }
 
-void SuperGame::processLogic()
+void SuperGame::processLogic(float deltaTime)
 {
 	this->angle += 0.01;
 
 	if (this->inputManager->IsKeyDown(SDLK_w))
 	{
-		this->player->ExecuteAction(PlayerAction::MOVE_FORWARD);
+		this->player->ExecuteAction(PlayerAction::MOVE_FORWARD, deltaTime);
 	}
 
 	if (this->inputManager->IsKeyDown(SDLK_s))
 	{
-		this->player->ExecuteAction(PlayerAction::MOVE_BACKWARD);
+		this->player->ExecuteAction(PlayerAction::MOVE_BACKWARD, deltaTime);
 	}
 
 	if (this->inputManager->IsKeyDown(SDLK_a))
 	{
-		this->player->ExecuteAction(PlayerAction::MOVE_LEFT);
+		this->player->ExecuteAction(PlayerAction::MOVE_LEFT, deltaTime);
 	}
 
 	if (this->inputManager->IsKeyDown(SDLK_d))
 	{
-		this->player->ExecuteAction(PlayerAction::MOVE_RIGHT);
+		this->player->ExecuteAction(PlayerAction::MOVE_RIGHT, deltaTime);
 	}
 
-	this->physicsWorld->Simulate();
+	this->physicsWorld->Simulate(deltaTime);
 }
 
 void SuperGame::drawScene()

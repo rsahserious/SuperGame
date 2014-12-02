@@ -28,7 +28,7 @@ namespace Engine
 
 		bool HasCollider();
 
-		virtual void Update();
+		virtual void Update(float deltaTime);
 		virtual void Render();
 
 	protected:

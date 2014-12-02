@@ -41,9 +41,10 @@ private:
 
 	void loop();
 	void processInput();
-	void processLogic();
+	void processLogic(float deltaTime);
 	void drawScene();
 	void outputFPS();
+
 	float time;
 	GameState gameState;
 

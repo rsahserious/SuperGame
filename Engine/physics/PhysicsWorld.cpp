@@ -28,7 +28,7 @@ namespace Engine
 		}
 	}
 
-	void PhysicsWorld::Simulate()
+	void PhysicsWorld::Simulate(float deltaTime)
 	{
 		for (unsigned int i = 0; i < this->objects.size(); i++)
 		{
@@ -39,12 +39,12 @@ namespace Engine
 				dynamicObject->HandleCollisions(this->objects);
 
 				// gravity
-				float gDelta = 0.00003f;
+				float gDelta = 0.00003f * deltaTime;
 				glm::vec3 gFactor = gDelta * this->gravityStrength * dynamicObject->GetPhysicsData()->GetMass() * this->gravityVector;
 				dynamicObject->GetPhysicsData()->GetVelocity() += gFactor;
 
 				// air resistance
-				float rDelta = 0.003;
+				float rDelta = 0.003 * deltaTime;
 				float rFactor = 1.0f - (this->airDensity * rDelta);
 				if (rDelta > 0.0f)
 				{
@@ -52,7 +52,7 @@ namespace Engine
 				}
 			}
 
-			this->objects[i]->Update();
+			this->objects[i]->Update(deltaTime);
 		}
 	}
 }

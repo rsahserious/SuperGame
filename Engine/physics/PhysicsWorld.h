@@ -14,7 +14,7 @@ namespace Engine
 		void AddObject(Object* object);
 		void RemoveObject(Object* object);
 
-		void Simulate();
+		void Simulate(float deltaTime);
 
 		inline glm::vec3& GetGravityVector() { return this->gravityVector; }
 		inline void SetGravityVector(const glm::vec3& vector) { this->gravityVector = vector; }

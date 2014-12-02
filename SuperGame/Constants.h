@@ -7,6 +7,7 @@ namespace Constants
 	static const float				ASPECT_RATIO			= (float)SCREEN_WIDTH / (float)SCREEN_HEIGHT;
 	static const float				FOV = 75.0f;
 
+	static const unsigned short		DESIRED_FPS				= 60;
 	static const unsigned short		FPS_LIMIT				= 120;
 	static const unsigned short		FPS_OUTPUT_INTERVAL		= 750;
 

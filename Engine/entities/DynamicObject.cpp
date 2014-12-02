@@ -13,12 +13,12 @@ namespace Engine
 
 	}
 
-	void DynamicObject::Update()
+	void DynamicObject::Update(float deltaTime)
 	{
-		this->transform->GetPos() += this->physicsData->GetVelocity();
-		this->transform->GetRot() += this->physicsData->GetAngularVelocity();
+		this->transform->GetPos() += this->physicsData->GetVelocity() * deltaTime;
+		this->transform->GetRot() += this->physicsData->GetAngularVelocity() * deltaTime;
 
-		Object::Update();
+		Object::Update(deltaTime);
 	}
 
 	void DynamicObject::HandleCollisions(const std::vector<Object*>& otherObjects)
