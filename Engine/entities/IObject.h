@@ -2,7 +2,7 @@
 
 namespace Engine
 {
-	class Entity
+	class IObject
 	{
 	public:
 		virtual void Update(float deltaTime) = 0;

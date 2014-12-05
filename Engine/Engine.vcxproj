@@ -19,7 +19,7 @@
     <ClInclude Include="physics\PhysicsWorld.h" />
     <ClInclude Include="physics\Collider.h" />
     <ClInclude Include="entities\DynamicObject.h" />
-    <ClInclude Include="entities\Entity.h" />
+    <ClInclude Include="entities\IObject.h" />
     <ClInclude Include="core\IOManager.h" />
     <ClInclude Include="rendering\CircularTerrainRenderer.h" />
     <ClInclude Include="rendering\DynamicMesh.h" />
@@ -46,7 +46,6 @@
     <ClCompile Include="physics\PhysicsWorld.cpp" />
     <ClCompile Include="physics\Collider.cpp" />
     <ClCompile Include="entities\DynamicObject.cpp" />
-    <ClCompile Include="entities\Entity.cpp" />
     <ClCompile Include="core\IOManager.cpp" />
     <ClCompile Include="rendering\CircularTerrainRenderer.cpp" />
     <ClCompile Include="rendering\DynamicMesh.cpp" />

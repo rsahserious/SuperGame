@@ -1,7 +1,7 @@
 #pragma once
 
 #include <string>
-#include "Entity.h"
+#include "IObject.h"
 #include "..\core\Transform.h"
 #include "..\rendering\Mesh.h"
 #include "..\rendering\Material.h"
@@ -12,7 +12,7 @@ using std::string;
 
 namespace Engine
 {
-	class Object : public Entity
+	class Object : public IObject
 	{
 	public:
 		Object(Mesh* mesh, Material* material);
